@@ -1,6 +1,6 @@
-const app = require('./src/app');
-const connectDB = require('./src/config/db'); // Importa a conexão com MongoDB
-const { port } = require('./src/config/config');
+const app = require("./src/app");
+const connectDB = require("./src/config/db"); // Importa a conexão com MongoDB
+const { port } = require("./src/config/config");
 
 // Conectar ao banco de dados
 connectDB();
