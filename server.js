@@ -6,7 +6,7 @@ const { port } = require('./src/config/config');
 connectDB();
 
 // Definir a porta do servidor
-const PORT = port|| 3000;
+const PORT = port || 3000;
 
 // Inicializar o servidor
 app.listen(PORT, () => {
