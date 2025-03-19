@@ -17,15 +17,3 @@ Content-Type: application/json
     "email": "laziruspoints@gmail.com",
     "password": "minhasenha"
 }
-
-### Listar usuários
-GET http://localhost:3000/api/users
-
-### Atualizar usuário
-PUT http://localhost:3000/api/users/updateRole/
-Content-Type: application/json
-
-{
-    "id": "67d4cf7de29994591dbe200c",
-    "isAdmin": true
-}

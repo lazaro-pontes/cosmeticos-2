@@ -1,14 +1,18 @@
 const app = require('./src/app');
-const connectDB = require('./src/config/db'); // Importa a conexão com MongoDB
-const { port } = require('./src/config/config');
+const connectDB = require('./src/config/db');
+const { port, mongoUri } = require('./src/config/config');
 
-// Conectar ao banco de dados
-connectDB();
+// Inicia o banco e o servidor
+const startServer = async () => {
+  try {
+    await connectDB(mongoUri);
+    app.listen(port, () => {
+      console.log(`Servidor rodando na porta ${port}`);
+    });
+  } catch (error) {
+    console.error("Erro ao iniciar o servidor:", error.message);
+    process.exit(1);
+  }
+};
 
-// Definir a porta do servidor
-const PORT = port|| 3000;
-
-// Inicializar o servidor
-app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT}`);
-});
+startServer();
