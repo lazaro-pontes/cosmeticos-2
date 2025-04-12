@@ -1,0 +1,38 @@
+### Criar pedido
+POST http://localhost:3000/api/orders
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZDRjZjdkZTI5OTk0NTkxZGJlMjAwYyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTc0MzIwMTk0MSwiZXhwIjoxNzQzMjA1NTQxfQ.I_4SVZImYd2Nh3daDGQ-dOvXZ0v9OCMPKH5k7-h1r60
+
+{
+  "items": [
+    { "product": "67e5813ce7c0eb6222ee20fa", "quantity": 2 },
+    { "product": "67e58396e7c0eb6222ee210c", "quantity": 6 }
+  ],
+  "paymentId": "106103956975"
+}
+
+### Listar pedidos do usuário logado
+GET http://localhost:3000/api/orders
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZDRjZjdkZTI5OTk0NTkxZGJlMjAwYyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTc0NDE0NjU4NCwiZXhwIjoxNzQ0MTUwMTg0fQ.X3E9cmUWWgVX5diflfo1d6HvLsCq-Q92tGCgK4AAOtY
+
+### Listar todos os pedidos (admin)
+GET http://localhost:3000/api/orders/all
+Authorization: Bearer <TOKEN_DO_ADMIN>
+
+### Atualizar status do pedido
+PUT http://localhost:3000/api/orders/ID_DO_PEDIDO
+Content-Type: application/json
+Authorization: Bearer <TOKEN_DO_ADMIN>
+
+{
+  "status": "shipped"
+}
+
+### Deletar pedido
+DELETE http://localhost:3000/api/orders/ID_DO_PEDIDO
+Authorization: Bearer <TOKEN_DO_ADMIN>
+
+
+### testas as coisa
+GET https://api.mercadopago.com/v1/payments/67e5c2d11151d1b4a4a4e015
+Authorization: Bearer APP_USR-3305909470330347-032322-eadd5cfbed323337630bdc8af3fbac1d-316622976

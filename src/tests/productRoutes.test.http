@@ -1,0 +1,37 @@
+### Criar produto
+POST http://localhost:3000/api/products/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZDRjZjdkZTI5OTk0NTkxZGJlMjAwYyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTc0MzA5MzAxOCwiZXhwIjoxNzQzMDk2NjE4fQ.NollVLtgj7NcXz7AvxaQpKGH-Q-Zxcz_HNI2s8dy1So
+
+{
+  "name": "Produto Teste apgado",
+  "price": 600.0,
+  "stock": 5,
+  "category": "Categoria Teste apagado",
+  "description": "Descrição do produto apagando",
+  "images": ["https://example.com/image1.jpg"]
+}
+
+### Listar produtos
+GET http://localhost:3000/api/products/
+
+### Listar produtos por ID
+GET http://localhost:3000/api/products/67e58203e7c0eb6222ee20fe
+
+### Atualizar produto
+PUT http://localhost:3000/api/products/67e5813ce7c0eb6222ee20fa
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZDRjZjdkZTI5OTk0NTkxZGJlMjAwYyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTc0MzA5MzAxOCwiZXhwIjoxNzQzMDk2NjE4fQ.NollVLtgj7NcXz7AvxaQpKGH-Q-Zxcz_HNI2s8dy1So
+
+{
+  "name": "Produto Teste 1 editado",
+  "price": 555.0,
+  "stock": 10,
+  "category": "Categoria Teste editado",
+  "description": "Descrição do produto testando edição",
+  "images": ["https://example.com/image1.jpg"]
+}
+
+### Deletar produto
+DELETE http://localhost:3000/api/products/67e583ebe7c0eb6222ee210f
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZDRjZjdkZTI5OTk0NTkxZGJlMjAwYyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTc0MzA5MzAxOCwiZXhwIjoxNzQzMDk2NjE4fQ.NollVLtgj7NcXz7AvxaQpKGH-Q-Zxcz_HNI2s8dy1So

@@ -2,9 +2,13 @@
 const express = require("express");
 const morgan = require("morgan"); // Logger HTTP para desenvolvimento
 const cors = require("cors"); // Para permitir requisições de outras origens
-const userRoutes = require("./routes/userRoutes"); // Irotas de usuarios
 const errorHandler = require("./middlewares/errorMiddleware"); // Middleware de tratamento de erros
 
+const userRoutes = require("./routes/userRoutes");// Rotas de usuarios
+const productRoutes = require("./routes/productRoutes"); // Rotas de produtos
+const orderRoutes = require("./routes/orderRoutes"); // Rotas de pedidos
+const paymentRoutes = require("./routes/paymentRoutes") // Rotas de pagamentos
+const webhookRoutes = require("./routes/webhookRoutes") // Rotas de webhooks
 
 // Inicialização do aplicativo Express
 const app = express();
@@ -22,6 +26,12 @@ app.get('/status', (req, res) => {
 
 // Importar rotas
 app.use("/api/users", userRoutes);
+app.use("/api/products", productRoutes);
+app.use("/api/orders", orderRoutes);
+app.use("/api/payments", paymentRoutes);
+app.use("/api/webhooks", webhookRoutes);
+
+
 
 app.use(errorHandler); // Middleware de tratamento de erros
 

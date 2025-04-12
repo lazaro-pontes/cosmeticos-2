@@ -1,0 +1,50 @@
+### criar pagamento no pix
+POST http://localhost:3000/api/payments/pix
+Content-Type: application/json
+
+{
+    "transaction_amount": 1249.99,
+    "description": "vestido prada",
+    "paymentMethodId": "pix",
+    "email": "test@email.com",
+    "identificationType": "CPF",
+    "number": "12345678909"
+}
+
+
+### criar pagamento no cartão de crédito
+POST http://localhost:3000/api/payments/card
+Content-Type: application/json
+
+{ 
+    "transaction_amount": 499.99,
+    "cardToken": "3a06399bd7d94d74a1ba013055b7b20e",
+    "description": "compras",
+    "installments": 1,
+    "paymentMethodId": "master",
+    "issuer_id": "issuer",
+    "payer": {
+        "email": "adrianasevero140590@gmail.com",
+        "identification": {
+            "type": "CPF",
+            "number": "38631897876"
+        }
+    }    
+}
+
+### gerar card token
+POST http://localhost:3000/api/payments/generate-card-token
+Content-Type: application/json
+
+{
+    "card_number": "5300332990122056",
+    "expiration_month": 4,
+    "expiration_year": 2028,
+    "security_code": "254",
+    "cardholder_name": "ADRIANA SEVERO SILVA",
+    "cardholder_identification": {
+        "type": "CPF",
+        "number": "38631897876"
+    }
+}
+

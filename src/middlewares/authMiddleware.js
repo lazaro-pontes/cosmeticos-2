@@ -10,7 +10,7 @@ const protect = async (req, res, next) => {
         }
 
         if (!token) {
-            return res.status(401).json({ message: "Não autorizado, sem token" });
+            return res.status(401).json({ message: "Não autorizado, sem token", headers: req.headers });
         }
 
         const decoded = jwt.verify(token, process.env.JWT_SECRET);

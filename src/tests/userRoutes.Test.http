@@ -1,0 +1,34 @@
+### Registrar um usuário
+POST http://localhost:3000/api/users/register
+Content-Type: application/json
+
+{
+    "name": "João Lázaro peneu",
+    "email": "laziruspoints@gmail.com",
+    "password": "minhasenha",
+    "isAdmin": true
+}
+
+### Login de usuário
+POST http://localhost:3000/api/users/login
+Content-Type: application/json
+
+{
+    "email": "laziruspoints@gmail.com",
+    "password": "minhasenha"
+}
+
+### Atualizar usuário
+PUT http://localhost:3000/api/users/67d4cf7de29994591dbe200c
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZDRjZjdkZTI5OTk0NTkxZGJlMjAwYyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTc0MzEwNTcyMSwiZXhwIjoxNzQzMTA5MzIxfQ.KGi62eCOwyNeOh5ZKbb7wlDiIJ1EfK9B4cNeXc12Pww
+
+{
+    "name": "jjj",
+    "email": "laziruspoints@gmail.com",
+    "password": "minhasenha",
+    "isAdmin": true
+}
+
+### Deletar usuário por ID
+DELETE http://localhost:3000/api/users/60f3b3b3b3b3b3b3b3b3b3b
